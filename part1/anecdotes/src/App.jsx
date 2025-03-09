@@ -1,4 +1,4 @@
-import { useState } from "react";
+ import { useState } from "react";
 
 const App = () => {
   const anecdotes = [
@@ -29,7 +29,6 @@ const App = () => {
   };
   let maxVoteIndex = vote.indexOf(Math.max(...vote));
 
-  // console.log("votes and max vote", vote, maxVoteIndex);
   return (
     <div>
       <h1>Anecdote of the day</h1>
