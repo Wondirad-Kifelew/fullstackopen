@@ -38,13 +38,20 @@ const App = () => {
         id: String(persons.length + 1),
       };
       // create contact in server
-      contactService.create(newObj).then((respData) => {
-        setPersons(persons.concat(respData));
-        setNewName("");
-        setNewNum("");
-        setErrorMessage(`${newName} is added to the phonebook list`);
-        setTimeout(() => setErrorMessage(null), 5000);
-      });
+      contactService
+        .create(newObj)
+        .then((respData) => {
+          setPersons(persons.concat(respData));
+          setNewName("");
+          setNewNum("");
+          setErrorMessage(`${newName} is added to the phonebook list`);
+          setTimeout(() => setErrorMessage(null), 5000);
+        })
+        .catch((error) => {
+          setErrorMessage(error.response.data.errorMsgToFrontEnd);
+          setTimeout(() => setErrorMessage(null), 5000);
+          // console.log(error.response.data.error);
+        });
     } else if (namesOnly.includes(newName.toLowerCase())) {
       if (
         window.confirm(
@@ -60,13 +67,19 @@ const App = () => {
           number: newNum,
         };
         //update contacts in the server
-        contactService.update(Id, newObj).then(() => {
-          setPersons(persons.map((p) => (p.id === Id ? newObj : p)));
-          setNewName("");
-          setNewNum("");
-          setErrorMessage(`${newName}'s contact is updated`);
-          setTimeout(() => setErrorMessage(null), 5000);
-        });
+        contactService
+          .update(Id, newObj)
+          .then(() => {
+            setPersons(persons.map((p) => (p.id === Id ? newObj : p)));
+            setNewName("");
+            setNewNum("");
+            setErrorMessage(`${newName}'s contact is updated`);
+            setTimeout(() => setErrorMessage(null), 5000);
+          })
+          .catch((error) => {
+            setErrorMessage(error.response.data.errorMsgToFrontEnd);
+            setTimeout(() => setErrorMessage(null), 5000);
+          });
         console.log(`${newName}'s number updated`);
       }
     }
