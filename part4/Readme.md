@@ -132,6 +132,7 @@ Content-Type: application/json
   "password": "sekret"
 }
 
+```
 ---
 
 ## 🛠️ Setup & Installation  
@@ -140,7 +141,7 @@ Content-Type: application/json
 ```sh
 git clone https://github.com/Wondirad-Kifelew/fullstackopen.git
 cd ./fullstackopen/part4
-```  
+  
 
 ### 2️⃣ Install dependencies  
 ```sh
