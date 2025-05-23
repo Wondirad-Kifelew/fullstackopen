@@ -5,7 +5,7 @@ post http://localhost:3003/api/blogs/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtub3QiLCJpZCI6IjY4MjYwODUyY2RjYzdmYzRlNDk2OTNlNyIsImlhdCI6MTc0NzUwNTExMCwiZXhwIjoxNzQ3NTkxNTEwfQ.UHm-qxp9nD-2CnL4CUVGeMmLhtSFCab0gB0zNJOwdLc
 
-{"title":"1298", "author": "asdfasd", "url":"sdfsdfsdf","likes": 232}
+{"title":"some new p", "author": "oli", "url":"sdfsdfsdf","likes": 232}
 
 ###
 post http://localhost:3003/api/users/
