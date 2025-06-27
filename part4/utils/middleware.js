@@ -13,7 +13,6 @@ const requestLogger = (request, response, next) => {
 }
 //modifies the request object to include the token and used in app.js
 const tokenExtractor = (request, response, next) => {
-  console.log('in tokenExtractor')
   const authorization = request.get('authorization')
   if(authorization && authorization.startsWith('Bearer ')) {
     request.token = authorization.replace('Bearer ', '')
@@ -24,7 +23,7 @@ const tokenExtractor = (request, response, next) => {
   next()
 }
 const userExtractor = async (request, response, next) =>{
-  console.log('in userExtractor')
+
   const decodedToken = jwt.verify(request.token, process.env.SECRET)
   
   if(!request.token || !decodedToken){

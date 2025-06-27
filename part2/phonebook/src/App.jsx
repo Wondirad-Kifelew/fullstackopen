@@ -98,7 +98,7 @@ const App = () => {
         .then(() => {
           setPersons((prevPers) => prevPers.filter((p) => p.id !== id));
         })
-        .catch((error) => {
+        .catch(() => {
           setErrorMessage(
             `${contactToDel.name}'s contact already deleted. Couldn't find it in the server`
           );

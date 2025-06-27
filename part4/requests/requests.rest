@@ -1,31 +1,35 @@
 get http://localhost:3003/api/blogs/
 
-###
+### create a blog
 post http://localhost:3003/api/blogs/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtub3QiLCJpZCI6IjY4MjYwODUyY2RjYzdmYzRlNDk2OTNlNyIsImlhdCI6MTc0NzUwNTExMCwiZXhwIjoxNzQ3NTkxNTEwfQ.UHm-qxp9nD-2CnL4CUVGeMmLhtSFCab0gB0zNJOwdLc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9sbW8iLCJpZCI6IjY4NTdmZGVhODE2NGE1ZmZjYjU0NjMxNSIsImlhdCI6MTc1MDU5NzEwMywiZXhwIjoxNzUwNjgzNTAzfQ.PfRTNsctM6A0grkqYneCGR_GnVtONmR33D3SFpIpMic
 
-{"title":"some new p", "author": "oli", "url":"sdfsdfsdf","likes": 232}
+{"title":"the wheel", "author": "alexander", "url":"sdfsdfsdf","likes": 2}
 
-###
+### sign up 
 post http://localhost:3003/api/users/
 Content-Type: application/json
 
-{"username":"kn", "name": "asdflk", "password":"sdjknlkn"}
+{"username":"olmo", "name": "abebe", "password":"password"}
 
-###
+### login
 post http://localhost:3003/api/login/
 Content-Type: application/json
 
-{"username":"knot", "name": "asdflk", "password":"sdjknlkn"}
+{"username":"wonde-2", "password":"password"}
 
-###
-DELETE http://localhost:3003/api/blogs/682763a5a875e183f72670e2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imtub3QiLCJpZCI6IjY4MjYwODUyY2RjYzdmYzRlNDk2OTNlNyIsImlhdCI6MTc0NzQxNTQ4OCwiZXhwIjoxNzQ3NTAxODg4fQ.cAzxRR6oqflVMGXwq8k3f1QPST0fTl1M5ZhXDN4FxrA
+### delete a note
+DELETE http://localhost:3003/api/blogs/685e5cb5d468109bd4e647a6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndvbmRlLTIiLCJpZCI6IjY4NWU1Y2IzZDQ2ODEwOWJkNGU2NDdhMCIsImlhdCI6MTc1MTAxNDYyMywiZXhwIjoxNzUxMTAxMDIzfQ.lYw6h6em244m6avQn_bthUIGuwDg8aGpFM5AVQuCLVU
 
 
-###
+### updating like
 PUT http://localhost:3003/api/blogs/6813763b333f836365a2e49f
 Content-Type: application/json
 
 {"likes": 500}
+
+### reset route
+post http://localhost:3003/api/testing/reset
+Content-Type: application/json
